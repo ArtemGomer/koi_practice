@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Barcode2</string>
+    <string name="open_gallery_btn">Open gallery</string>
+    <string name="picture_desc">picture</string>
+    <string name="scan_btn">scan</string>
+    <string name="name_text">name</string>
+    <string name="company_text">company</string>
+    <string name="product_picture_desc">product picture</string>
+    <string name="back_button_text">back</string>
+</resources>
