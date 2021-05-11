@@ -9,6 +9,6 @@ import retrofit2.http.Path
 interface BarcodeApi {
 
     @GET("{code}")
-    fun getBarcodeInfo(@Path("code") code: Int): Single<BarcodeResponse>
+    fun getBarcodeInfo(@Path("code") code: Long): Single<BarcodeResponse>
 
 }

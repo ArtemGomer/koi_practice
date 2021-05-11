@@ -4,5 +4,5 @@ import com.nsu.gomer.barcode2.domain.BarcodeResponse
 import io.reactivex.Single
 
 interface BarcodeDataSource {
-    fun getBarcodeInfo(code: Int): Single<BarcodeResponse>
+    fun getBarcodeInfo(code: Long): Single<BarcodeResponse>
 }

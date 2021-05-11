@@ -12,4 +12,5 @@ interface MainView: MvpView {
     fun initViews()
     fun setScan(isScan: Boolean)
     fun showMessage(message: String?)
+    fun openInfoActivity(code: Long?)
 }

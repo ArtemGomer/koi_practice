@@ -50,7 +50,7 @@ class MainPresenter : MvpPresenter<MainView>() {
                 } else {
                     for (barcode in it) {
                         val rawValue = barcode.rawValue
-                        viewState.showMessage(rawValue)
+                        viewState.openInfoActivity(rawValue?.toLong())
                     }
                 }
             }
