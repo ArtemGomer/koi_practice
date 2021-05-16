@@ -1,5 +1,6 @@
 package com.nsu.gomer.barcode2.presentation.main
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import com.nsu.gomer.barcode2.R
+import com.nsu.gomer.barcode2.presentation.info.InfoActivity
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 
@@ -15,7 +17,14 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
     companion object {
         const val CHOOSE_PICK = 1
+        private const val TAG = "EXTRA_TAG"
+
+        fun start(context: Context) {
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+        }
     }
+
 
     private lateinit var openButton: Button
     private lateinit var scanButton: Button
@@ -51,6 +60,12 @@ class MainActivity : MvpAppCompatActivity(), MainView {
             presenter.scanImage()
         }
 
+    }
+
+    override fun openInfoActivity(code: Long?) {
+        code?.let {
+            InfoActivity.start(this, it)
+        } ?: showMessage("Can not open info!")
     }
 
     override fun showMessage(message: String?) {
